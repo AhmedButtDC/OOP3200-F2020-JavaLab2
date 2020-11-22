@@ -1,7 +1,7 @@
 //Group:            15
 //Name:             Ahmed Butt, Michai Pryce
 //Student ID:       100770449, 100668094
-//Last Modified:    November 18, 2020
+//Last Modified:    November 22, 2020
 //Project:          OOP3200-F2020-JavaLab2
 
 package ca.durhamcollege;
@@ -96,6 +96,10 @@ public class WorkTicket
         {
             System.out.print(iae + " - Work ticket date is invalid.\n\n");
         }
+        catch (Exception e)
+        {
+            System.out.print(e + " - Work ticket date is invalid.\n\n");
+        }
     }
 
     public String getDescription()
@@ -146,7 +150,7 @@ public class WorkTicket
         setDescription(description);
 
         if (this.work_ticket_number != work_ticket_number || this.client_id != client_id || //if one or more setters didn't set (invalid data)
-                this.work_ticket_date != work_ticket_date || this.description != description)
+                this.work_ticket_date == null || this.description != description)
         {
             isValid = false; //set isValid to false
         }
